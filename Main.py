@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import ttk  # Importando ttk separadamente
 from BookManagement import add_book, get_books, remove_book, edit_book
 from UserManagement import add_user, get_users, remove_user, edit_user
 
@@ -74,7 +75,7 @@ tk.Button(book_frame, text="Add Book", command=add_book_command).grid(row=4, col
 tk.Button(book_frame, text="Remove Book", command=remove_book_command).grid(row=5, column=0, columnspan=2)
 tk.Button(book_frame, text="Edit Book", command=edit_book_command).grid(row=6, column=0, columnspan=2)
 
-book_list = tk.ttk.Treeview(book_frame, columns=("ID", "Title", "Author", "Year", "ISBN"), show="headings")
+book_list = ttk.Treeview(book_frame, columns=("ID", "Title", "Author", "Year", "ISBN"), show="headings")
 book_list.heading("ID", text="ID")
 book_list.heading("Title", text="Title")
 book_list.heading("Author", text="Author")
@@ -98,7 +99,7 @@ tk.Button(user_frame, text="Add User", command=add_user_command).grid(row=2, col
 tk.Button(user_frame, text="Remove User", command=remove_user_command).grid(row=3, column=0, columnspan=2)
 tk.Button(user_frame, text="Edit User", command=edit_user_command).grid(row=4, column=0, columnspan=2)
 
-user_list = tk.ttk.Treeview(user_frame, columns=("ID", "Name", "Email"), show="headings")
+user_list = ttk.Treeview(user_frame, columns=("ID", "Name", "Email"), show="headings")
 user_list.heading("ID", text="ID")
 user_list.heading("Name", text="Name")
 user_list.heading("Email", text="Email")
